@@ -1,15 +1,16 @@
-package Backtracking_Practice;
+package Backtracking_Practice.N과M;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main_15657 {
+public class Main_15663 {
 	static int n;
 	static int r;
 	static int[] nums;
 	static int[] choice;
+	static boolean[] visited;
 	static StringBuilder sb;
 	
 	public static void main(String[] args) throws IOException {
@@ -27,15 +28,16 @@ public class Main_15657 {
 		Arrays.sort(nums);
 		
 		choice = new int[r];
+		visited = new boolean[n];
 		
 		sb = new StringBuilder();
 		
-		combiRe(0, 0);
+		perm(0);
 		
 		System.out.println(sb.toString());
 	}
 
-	static void combiRe(int idx, int start) {
+	static void perm(int idx) {
 		if(idx == r) {
 			for (int i = 0; i < choice.length; i++) {
 				sb.append(choice[i]).append(" ");
@@ -44,9 +46,16 @@ public class Main_15657 {
 			return;
 		}
 		
-		for (int i = start; i < n; i++) {
-			choice[idx] = nums[i]; 
-			combiRe(idx+1, i);
+		int before = 0;
+		for (int i = 0; i < n; i++) {
+			if(visited[i]) continue;
+			if(before != nums[i]) {
+				visited[i] = true;
+				choice[idx] = nums[i]; 
+				before = nums[i]; 
+				perm(idx+1);
+				visited[i] = false;
+			}
 		}
 	}
 }

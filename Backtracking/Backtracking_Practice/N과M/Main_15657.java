@@ -1,11 +1,11 @@
-package Backtracking_Practice;
+package Backtracking_Practice.N과M;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main_15656 {
+public class Main_15657 {
 	static int n;
 	static int r;
 	static int[] nums;
@@ -30,12 +30,12 @@ public class Main_15656 {
 		
 		sb = new StringBuilder();
 		
-		permRe(0);
+		combiRe(0, 0);
 		
 		System.out.println(sb.toString());
 	}
 
-	static void permRe(int idx) {
+	static void combiRe(int idx, int start) {
 		if(idx == r) {
 			for (int i = 0; i < choice.length; i++) {
 				sb.append(choice[i]).append(" ");
@@ -44,9 +44,9 @@ public class Main_15656 {
 			return;
 		}
 		
-		for (int i = 0; i < n; i++) {
+		for (int i = start; i < n; i++) {
 			choice[idx] = nums[i]; 
-			permRe(idx+1);
+			combiRe(idx+1, i);
 		}
 	}
 }

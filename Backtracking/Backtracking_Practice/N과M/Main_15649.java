@@ -1,16 +1,15 @@
-package Backtracking_Practice;
+package Backtracking_Practice.N과M;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main_15664 {
+public class Main_15649 {
 	static int n;
 	static int r;
 	static int[] nums;
 	static int[] choice;
-	static StringBuilder sb;
+	static boolean[] visited;
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -19,37 +18,32 @@ public class Main_15664 {
 		r = Integer.parseInt(st.nextToken());
 		nums = new int[n];
 		
-		st = new StringTokenizer(br.readLine());
 		for (int i = 0; i < n; i++) {
-			nums[i] = Integer.parseInt(st.nextToken());
+			nums[i] = i+1;
 		}
 		
-		Arrays.sort(nums);
-		
 		choice = new int[r];
+		visited = new boolean[n];
 		
-		sb = new StringBuilder();
-		
-		combi(0,0);
-		
-		System.out.println(sb.toString());
+		perm(0);
 	}
 
-	static void combi(int idx, int start) {
+	static void perm(int idx) {
+		StringBuilder sb = new StringBuilder();
 		if(idx == r) {
 			for (int i = 0; i < choice.length; i++) {
 				sb.append(choice[i]).append(" ");
 			}
-			sb.append("\n");
+			System.out.println(sb.toString());
 			return;
 		}
 		
-		int before = 0;
-		for (int i = start; i < n; i++) {
-			if(before != nums[i]) {
+		for (int i = 0; i < n; i++) {
+			if(!visited[i]) {
+				visited[i] = true;
 				choice[idx] = nums[i]; 
-				before = nums[i]; 
-				combi(idx+1, i+1);
+				perm(idx+1);
+				visited[i] = false;
 			}
 		}
 	}

@@ -1,10 +1,11 @@
-package Backtracking_Practice;
+package Backtracking_Practice.N과M;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main_15651 {
+public class Main_15665 {
 	static int n;
 	static int r;
 	static int[] nums;
@@ -18,13 +19,19 @@ public class Main_15651 {
 		r = Integer.parseInt(st.nextToken());
 		nums = new int[n];
 		
+		st = new StringTokenizer(br.readLine());
 		for (int i = 0; i < n; i++) {
-			nums[i] = i+1;
+			nums[i] = Integer.parseInt(st.nextToken());
 		}
 		
+		Arrays.sort(nums);
+		
 		choice = new int[r];
+		
 		sb = new StringBuilder();
+		
 		perm(0);
+		
 		System.out.println(sb.toString());
 	}
 
@@ -37,9 +44,13 @@ public class Main_15651 {
 			return;
 		}
 		
+		int before = 0;
 		for (int i = 0; i < n; i++) {
+			if(before != nums[i]) {
 				choice[idx] = nums[i]; 
+				before = nums[i]; 
 				perm(idx+1);
+			}
 		}
 	}
 }

@@ -1,14 +1,17 @@
-package Backtracking_Practice;
+package Backtracking_Practice.N과M;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main_15650 {
+public class Main_15654 {
 	static int n;
 	static int r;
 	static int[] nums;
 	static int[] choice;
+	static boolean[] visited;
+	static StringBuilder sb;
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -16,29 +19,39 @@ public class Main_15650 {
 		n = Integer.parseInt(st.nextToken());
 		r = Integer.parseInt(st.nextToken());
 		nums = new int[n];
-		
+		st = new StringTokenizer(br.readLine());
 		for (int i = 0; i < n; i++) {
-			nums[i] = i+1;
+			nums[i] = Integer.parseInt(st.nextToken());
 		}
 		
+		Arrays.sort(nums);
+		
 		choice = new int[r];
-		combi(0, 0);
+		visited = new boolean[n];
+		
+		sb = new StringBuilder();
+		
+		perm(0);
+		
+		System.out.println(sb.toString());
 	}
 
-	static void combi(int start, int idx) {
-		StringBuilder sb = new StringBuilder();
-		
+	static void perm(int idx) {
 		if(idx == r) {
-			for (int i = 0; i < r; i++) {
+			for (int i = 0; i < choice.length; i++) {
 				sb.append(choice[i]).append(" ");
 			}
-			System.out.println(sb.toString());
+			sb.append("\n");
 			return;
 		}
 		
-		for (int i = start; i < n; i++) {
-			choice[idx] = nums[i];
-			combi(i+1, idx+1);
+		for (int i = 0; i < n; i++) {
+			if(!visited[i]) {
+				visited[i] = true;
+				choice[idx] = nums[i]; 
+				perm(idx+1);
+				visited[i] = false;
+			}
 		}
 	}
 }
