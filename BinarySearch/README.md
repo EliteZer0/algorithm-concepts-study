@@ -35,8 +35,8 @@
 값을 찾거나 간격이 비어있을 때까지 반복.
 
 
-[이진 탐색 코드 구현](https://github.com/EliteZer0/Algorithm_Study/tree/main/Concepts_Study/BinarySearch/BinarySearch_Implement)
+[이진 탐색 코드 구현](https://github.com/EliteZer0/algorithm-concepts-study/tree/main/BinarySearch/BinarySearch_Implement)
 
-[이진 탐색 연습문제 풀이](https://github.com/EliteZer0/Algorithm_Study/tree/main/Concepts_Study/BinarySearch/BinarySearch_Practice)
+[이진 탐색 연습문제 풀이](https://github.com/EliteZer0/algorithm-concepts-study/tree/main/BinarySearch/BinarySearch_Practice)
 
 - [x] [BOJ 2805번 : 나무 자르기](https://www.acmicpc.net/problem/2805)
