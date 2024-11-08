@@ -1,11 +1,11 @@
 # Algorithm_Concepts_Study
 
-## [백트래킹(Backtracking)](https://github.com/EliteZer0/Algorithm_Study/tree/main/Concepts_Study/Backtracking)
+## [백트래킹(Backtracking)](https://github.com/EliteZer0/algorithm-concepts-study/tree/main/Backtracking)
 
 
-[백트래킹 코드 구현](https://github.com/EliteZer0/Algorithm_Study/tree/main/Concepts_Study/Backtracking/Backtracking_Implement)
+[백트래킹 코드 구현](https://github.com/EliteZer0/algorithm-concepts-study/tree/main/Backtracking/Backtracking_Implement)
 
-[백트래킹 연습문제 풀이](https://github.com/EliteZer0/Algorithm_Study/tree/main/Concepts_Study/Backtracking/Backtracking_Practice)
+[백트래킹 연습문제 풀이](https://github.com/EliteZer0/algorithm-concepts-study/tree/main/Backtracking/Backtracking_Practice)
 
 - [x] [BOJ 15649번 : N과 M (1)](https://www.acmicpc.net/problem/15649)
 - [x] [BOJ 15650번 : N과 M (2)](https://www.acmicpc.net/problem/15650)
