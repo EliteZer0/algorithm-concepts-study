@@ -1,4 +1,4 @@
-package Kruskal_Implement;
+package Kruskal.Kruskal_Implement;
 
 import java.io.BufferedReader;
 import java.io.IOException;

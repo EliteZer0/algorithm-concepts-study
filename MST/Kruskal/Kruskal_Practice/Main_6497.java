@@ -1,4 +1,4 @@
-package Kruskal_Practice;
+package Kruskal.Kruskal_Practice;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,7 +21,7 @@ class Edge implements Comparable<Edge>{
 	}
 }
 
-public class Main_1647 {
+public class Main_6497 {
 	static int[] parent;
 	static PriorityQueue<Edge> pq;
 	
@@ -40,36 +40,42 @@ public class Main_1647 {
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		
-		int N = Integer.parseInt(st.nextToken());
-		int M = Integer.parseInt(st.nextToken());
+		while(true) {
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			int m = Integer.parseInt(st.nextToken());
+			int n = Integer.parseInt(st.nextToken());
 			
-		parent = new int[N+1];
-		pq = new PriorityQueue<>();
-		
-		for (int i = 0; i < N+1; i++) {
-			parent[i] = i;
-		}
-		
-		for (int i = 0; i < M; i++) {
-			st = new StringTokenizer(br.readLine());
-			int A = Integer.parseInt(st.nextToken());
-			int B = Integer.parseInt(st.nextToken());
-			int C = Integer.parseInt(st.nextToken());
+			if(m==0 && n==0) break;
 			
-			pq.offer(new Edge(A, B, C));
+			int totalCost = 0;
+			
+			parent = new int[m];
+			pq = new PriorityQueue<>();
+			
+			for (int i = 0; i < m; i++) {
+				parent[i] = i;
+			}
+			
+			for (int i = 0; i < n; i++) {
+				st = new StringTokenizer(br.readLine());
+				
+				int x = Integer.parseInt(st.nextToken());
+				int y = Integer.parseInt(st.nextToken());
+				int z = Integer.parseInt(st.nextToken());
+				
+				totalCost += z;
+				
+				pq.offer(new Edge(x, y, z));
+			}
+			
+			int min = kruskal(m);
+			System.out.println(totalCost - min);
 		}
-		
-		int min = kruskal(N);
-		
-		System.out.println(min);
 	}
 
-	private static int kruskal(int n) {
+	private static int kruskal(int m) {
 		int cost = 0;
 		int edges = 0;
-		int maxWeight = 0;
 		
 		while(!pq.isEmpty()) {
 			Edge cur = pq.poll();
@@ -77,13 +83,12 @@ public class Main_1647 {
 			if(find(cur.from) != find(cur.to)) {
 				union(cur.from, cur.to);
 				cost += cur.weight;
-				maxWeight = Math.max(maxWeight, cur.weight);
 				edges++;
 			}
 			
-			if(edges == n-1) break;
+			if(edges == m-1) break;
 		}
 		
-		return cost - maxWeight;
+		return cost;
 	}
 }
