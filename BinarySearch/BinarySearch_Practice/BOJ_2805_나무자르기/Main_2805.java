@@ -1,8 +1,8 @@
-package BinarySearch_Practice.나무자르기;
+package BinarySearch_Practice.BOJ_2805_나무자르기;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-//import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main_2805 {
@@ -18,25 +18,25 @@ public class Main_2805 {
 			trees[i] = Integer.parseInt(st.nextToken());
 			max = Math.max(max, trees[i]);
 		}
-		
+
 		long sum = 0;
 		int min = 0;
-		
-		while(min < max) {
-			int mid = (min+max)/2;
+
+		while (min < max) {
+			int mid = (min + max) / 2;
 			sum = 0;
-			for(int treeHeight : trees) {
-				if(treeHeight-mid>0) {
-					sum += treeHeight-mid;
+			for (int treeHeight : trees) {
+				if (treeHeight - mid > 0) {
+					sum += treeHeight - mid;
 				}
 			}
-			if(sum<m) {
+			if (sum < m) {
 				max = mid;
-			}else {
-				min = mid+1;
+			} else {
+				min = mid + 1;
 			}
 		}
-		
-		System.out.println(min-1);
+
+		System.out.println(min - 1);
 	}
 }
