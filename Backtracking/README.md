@@ -1,7 +1,4 @@
-# Algorithm_Concepts_Study
-
-## [백트래킹(Backtracking)](https://github.com/EliteZer0/algorithm-concepts-study/tree/main/Backtracking)
-
+# 백트래킹(Backtracking)
 
 [백트래킹 코드 구현](https://github.com/EliteZer0/algorithm-concepts-study/tree/main/Backtracking/Backtracking_Implement)
 
@@ -19,9 +16,9 @@
 - [x] [BOJ 15664번 : N과 M (10)](https://www.acmicpc.net/problem/15664)
 - [x] [BOJ 15665번 : N과 M (11)](https://www.acmicpc.net/problem/15665)
 - [x] [BOJ 15666번 : N과 M (12)](https://www.acmicpc.net/problem/15666)
-- [x] [BOJ 1182번 : 부분수열의 합](https://www.acmicpc.net/problem/1182) 
+- [x] [BOJ 1182번 : 부분수열의 합](https://www.acmicpc.net/problem/1182)
 - [x] [BOJ 14888번 : 연산자 끼워넣기](https://www.acmicpc.net/problem/14888)
-- [ ] [BOJ 9663번 : N-Queen](https://www.acmicpc.net/problem/9663)  
+- [ ] [BOJ 9663번 : N-Queen](https://www.acmicpc.net/problem/9663)
 - [ ] [BOJ 1987번 : 알파벳](https://www.acmicpc.net/problem/1987)
 - [ ] [BOJ 2580번 : 스도쿠](https://www.acmicpc.net/problem/2580)
 - [ ] [BOJ 15684번 : 사다리 조작](https://www.acmicpc.net/problem/15684)
